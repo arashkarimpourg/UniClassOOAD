@@ -1,0 +1,48 @@
+@startuml
+
+left to right direction
+actor Student
+actor Faculty
+actor Administrator
+
+rectangle CourseManagementSystem {
+    usecase (Registering a New Account) as register
+    usecase (Logging in & Authentication) as login
+    usecase (Browse List of Courses) as browsecourses
+    usecase (View Descriptions of Courses) as viewcoursedetails
+    usecase (Select the Desired Courses) as selectcourses
+    usecase (Modify the Current Course Selection) as modifyselection
+    usecase (View the Final Schedule) as viewschedule
+    
+
+    Student --> login
+    Student --> browsecourses
+    Student --> viewcoursedetails
+    Student --> selectcourses
+    Student --> modifyselection
+    Student --> viewschedule
+    
+    Faculty --> login
+    Faculty --> viewcoursedetails
+    Faculty --> selectcourses
+    Faculty --> modifyselection
+    Faculty --> viewschedule
+
+    Administrator --> register
+    Administrator --> login
+    Administrator --> browsecourses
+    Administrator --> viewcoursedetails
+    Administrator --> selectcourses
+    Administrator --> modifyselection
+    Administrator --> viewschedule
+    
+    note right of register: Allows the administrators to create new accounts for both students and faculty
+    note right of login: Allows students to log in to the system using their existing accounts
+    note right of browsecourses: Enables students, faculty, and administrators to search through the list of available courses
+    note right of viewcoursedetails: Provides detailed descriptions regarding each course
+    note right of selectcourses: Allows the students and also the faculty to select their desired courses
+    note right of modifyselection: Allows the students and the faculty to change their current course selection
+    note right of viewschedule: Displays the final course schedule for both the students and the faculty
+}
+
+@enduml

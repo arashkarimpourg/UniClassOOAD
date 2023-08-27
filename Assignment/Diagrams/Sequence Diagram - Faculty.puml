@@ -1,0 +1,22 @@
+@startuml
+
+actor Faculty
+participant "Course Management System" as CMS
+database "Course Database" as DB
+
+Faculty -> CMS: Login
+Faculty -> CMS: View Descriptions of Courses
+CMS -> DB: Fetch Descriptions of Courses
+DB --> CMS: Descriptions of Courses
+Faculty -> CMS: Select the Desired Course
+CMS -> DB: Add Course to Faculty's Assignment
+DB --> CMS: Course Added to Faculty's Assignment
+Faculty -> CMS: Modify the Current Course Selection
+CMS -> DB: Update Faculty's Course Assignment
+DB --> CMS: Current Course Selection Updated
+Faculty -> CMS: View the Final Course Schedule
+CMS -> DB: Create the Final Course Schedule
+DB --> CMS: Final Course Schedule
+CMS --> Faculty: Final Course Schedule
+
+@enduml

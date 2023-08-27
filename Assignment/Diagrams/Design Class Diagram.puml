@@ -1,0 +1,45 @@
+Can you give me a step by step short descripton... For example if it was the "Faculty" Sequence diagram...
+
+@startuml
+
+actor Faculty
+participant "Course Management System" as CMS
+database "Course Database" as DB
+
+Faculty -> CMS: Login
+Faculty -> CMS: View Descriptions of Courses
+CMS -> DB: Fetch Descriptions of Courses
+DB --> CMS: Descriptions of Courses
+Faculty -> CMS: Select the Desired Course
+CMS -> DB: Add Course to Faculty's Assignment
+DB --> CMS: Course Added to Faculty's Assignment
+Faculty -> CMS: Modify the Current Course Selection
+CMS -> DB: Update Faculty's Course Assignment
+DB --> CMS: Current Course Selection Updated
+Faculty -> CMS: View the Final Course Schedule
+CMS -> DB: Create the Final Course Schedule
+DB --> CMS: Final Course Schedule
+CMS --> Faculty: Final Course Schedule
+
+@enduml
+
+The the steps would be as follows...
+
+
+In the Sequence Diagram above, the "Faculty" actor interacts with the Course Management System (CMS) for course assignment. Here are the steps in this scenario:
+1.	The “Faculty” member logs in to the CMS.
+2.	The “Faculty” member views the descriptions of the courses.
+3.	The CMS fetches the descriptions of the courses from the CMS Database.
+4.	The Course Database provides the descriptions of the courses to the CMS.
+5.	The “Faculty” member selects the desired course for assignment.
+6.	The CMS adds the course to the “Faculty” member's assignment in the CMS Database.
+7.	The CMS Database confirms that the course has been added to “Faculty” member's assignment.
+8.	The faculty member modifies their current course selection or assignment if needed.
+9.	The CMS updates the “Faculty” member's course assignment in the CMS Database.
+10.	The CMS Database confirms that “Faculty” member's current course selection has been updated.
+11.	The “Faculty” member views the final course schedule.
+12.	The CMS generates the final course schedule by accessing the CMS Database.
+13.	The CMS Database provides the final course schedule to the CMS.
+14.	The CMS provides the final course schedule to the “Faculty” member.
+
+Can you do the same for "Administrator" Sequence diagram

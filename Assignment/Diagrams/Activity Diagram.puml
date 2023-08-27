@@ -1,0 +1,38 @@
+@startuml
+!theme crt-amber
+start
+
+:Register A New Account;
+-Login
+
+if (User is Student) then (Yes)
+  :Browse List of Courses;
+  :View Descriptions of Courses;
+  repeat
+    :Select the Desired Course;
+    if (More Courses to Select From?) then (Yes)
+      -Select the Desired Course
+    else (No)
+      -Modify the Current Course Selection
+    endif
+  repeat while (Courses to Select?)
+else if (User is Administrator) then (Yes)
+  :Browse List of Courses;
+  :View Descriptions of Courses;
+  :Select the Desired Course;
+  -Modify the Current Course Selection
+else if (User is Faculty) then (Yes)
+  :View Descriptions of Courses;
+  repeat
+    :Select the Desired Course;
+    if (More Courses to Select From?) then (Yes)
+      -Select the Desired Course
+    else (No)
+      -Modify the Current Course Selection
+    endif
+  repeat while (Courses to Select?)
+endif
+
+:View the Final Schedule;
+stop
+@enduml

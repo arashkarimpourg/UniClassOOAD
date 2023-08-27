@@ -1,0 +1,24 @@
+@startuml
+!theme crt-amber
+actor Student
+participant "Course Management System" as CMS
+database "CMS Database" as DB
+
+Student -> CMS: Login
+Student -> CMS: Browse List of Courses
+CMS -> DB: Fetch List of Courses
+DB --> CMS: List of Courses
+Student -> CMS: View Descriptions of Courses
+CMS -> DB: Fetch Descriptions of Courses
+DB --> CMS: Descriptions of Courses
+Student -> CMS: Select the Desired Course
+CMS -> DB: Add Course to the List of Selected Courses
+DB --> CMS: Course Added to the List of Selected Courses
+Student -> CMS: Modify the Current Course Selection
+CMS -> DB: Update the Current Course Selection
+DB --> CMS: Current Course Selection Updated
+Student -> CMS: View the Final Course Schedule
+CMS -> DB: Create the Final Course Schedule
+DB --> CMS: Final Course Schedule
+CMS --> Student: Final Course Schedule
+@enduml
